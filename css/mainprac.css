@@ -1,0 +1,289 @@
+/*reset*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*estilos generales*/
+body{
+    background-color: black;
+    color: whitesmoke;
+}
+
+
+/*estilos para header*/
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1{
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+header .boton-encabezado{
+    color: whitesmoke;
+    font-size: 0.8rem;
+    padding: 0.4rem 1rem;
+    background-color: orange;
+    border-radius: 2rem;
+    font-weight: bolder;
+}
+
+/*estilos de main*/
+main{
+    display: flex; /*trabaja en columnas*/
+    flex-direction: column; /*como flex trabaja ven columnas horizontales, lo cambia a vertical */
+    justify-content: center; /*Mueve los elementos hijos en el eje HORIZONTAL*/
+    align-items: center; /*Mueve los elementos hijos en el eje VERTICAL*/
+    text-align: center; /*centra el contenido*/
+    padding: 1.5rem 0.5rem; /*crea bordes arriba abajo izq derech*/
+    gap: 1.3rem; /*espacio entre los contenedores*/
+}
+
+main h1{
+    font-weight: bolder; /*le da negrita a h1*/
+    font-size: 2rem;
+}
+
+main h1 span{
+    display: block; /*fuerza a que el elemento ocupe su propia línea*/
+    color: orange; /*color del texto*/
+    text-decoration: underline; /*subrayado*/
+}
+
+main p{
+    padding: 0.1rem;
+    font-size: 1.2rem;
+}
+
+main .boton-uno, main .boton-dos, section .boton-uno, section .boton-dos{
+    border-radius: 100px; /*bordes redondos*/
+    padding: 1.2rem 4rem; /*relleno acho y alto*/
+    font-size: 1.1rem; /*tamaño de la letra*/
+    font-weight: bolder; /*negrita*/
+}
+
+main .boton-uno{
+    background-color: orange; /*color del relleno*/
+    margin-bottom: 1rem; /*crear un espacio hacia abajo*/
+}
+
+main .boton-dos{
+    border: 0.02rem solid whitesmoke; /*grosor del borde y estilo*/
+    margin-bottom: 1rem; /*crear un espacio hacia abajo*/
+}
+
+main .señora-uno{
+    background-color: #231f17;
+    padding: 1.3rem;
+    border-radius: 20px;
+}
+
+main .señora-uno img{
+    height: 100%; /*altura*/
+    width: 100%; /*ancho*/
+    object-fit: cover; /*se utiliza para no distorcionar la imagen*/
+    border-radius: 20px;
+
+}
+
+/*estilos de section*/
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    gap: 1rem; /*separacion de los emelementos*/
+}
+
+section .h2-1024{
+    display: none;
+}
+
+section .señora-dos img{
+    height: 100%; /*altura*/
+    width: 100%; /*ancho*/
+    object-fit: cover; /*se utiliza para no distorcionar la imagen*/
+    border-radius: 20px;
+}
+
+section .h2{
+    margin-bottom: 2rem;
+}
+
+section h2 span{
+    border-bottom: 3px solid orange; /*crea un subrayado en la parte de abajo del elemento*/
+}
+
+section .contenedor-tarjeta{
+    display: flex; 
+    flex-direction: column; /*trabaja en vertical*/
+    gap: 2rem; /*separacion de los elementos*/
+}
+
+section .tarjeta{
+    background-color: #191919; /*color de fondo */
+    padding: 2rem; /*borde */
+    border-radius: 0.5rem; /*efecto redondeado*/
+}
+
+section .tarjeta img{
+    width: 10%; /*tamaño de la iamgen*/
+    height: 10%;
+    margin-bottom: 1rem; /*espacio ente la imagen hacia abajo*/
+}
+
+section .botones{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+section .boton-uno{
+    background-color: orange;
+    color: whitesmoke;
+    padding: 1rem 2rem;
+    font-size: 0.9rem;
+}
+
+section .boton-dos{
+    border: 0.02rem solid orange;
+    color: orange;
+    padding: 1rem 2rem;
+    font-size: 0.9rem;
+}
+
+/*media queri tablet*/
+
+@media screen and (min-width: 768px){
+    header{
+        justify-content: space-around;
+    }
+   
+   
+    main{
+        padding: 3rem;
+    }
+
+    main h1{
+        font-size: 3.3rem;
+    }
+
+    section .contenedor-tarjeta{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        align-items: center;
+    }
+
+    section .tarjeta{
+        padding: 2.9rem;
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    header{
+        justify-content: space-around;
+    }
+
+    main{
+        display: flex;
+        flex-direction: column;
+        padding: 0 17rem;
+        margin-bottom: 3rem;
+    }
+
+    main .botones-main{
+        display: flex;
+        gap: 2rem;
+    }
+
+    main .boton-uno, main .boton-dos{
+        font-size: 0.9rem;
+        padding: 0.7rem 2rem;
+        font-weight: bold;
+    }
+
+    main h1{
+        font-size: 2.5rem;
+    }
+
+    main p{
+        font-size: 1rem;
+        width: 32rem;
+    }
+
+    section{
+        display: grid; /*estilo que se utiliza*/
+        grid-template-columns: 1.1fr 1fr; /*divide la seccion en 2 izq der*/
+        gap: 1rem 2rem; /*espacio enter filas y espacio ente columnas*/
+        align-items: start; /* empieza donde empieza el cuadro*/
+        max-width: 1200px; /*espacio maximo que puede ocupar*/
+        margin: 0 auto; /*arriba y abajo 0, izq derech auto*/
+        padding: 3rem 0; /*arriba y abajo 3 , costados cero*/
+        text-align: left; /*alinea el texto a la izquierda*/
+    }
+
+    section .señora-dos{
+        grid-column: 1; /*ocupa el lado izquierdo*/
+    }
+    section .señora-dos img{
+        width: 100%; /*hace que ocupe el 100 de acho*/
+        height: 100%; /*hace que ocupe el 100 de largo*/
+        object-fit: cover; /*corta la imagen sin deformarla*/
+    }
+
+    section .h2{
+        margin-top: 2rem;
+        margin: 0;
+        margin-bottom: 1rem;
+        display: none;
+    }
+
+    section .h2-1024{
+        display: block;
+    }
+
+    section .h5{
+        margin-bottom: 2.5rem;
+        font-size: 1.2rem;
+    }
+
+    section .lorem{
+        font-size: 1rem;
+    }
+
+    section .contenedor-tarjeta{
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        gap: 1.3rem 1.3rem;
+    }
+
+    section .contenedor-tarjeta .tarjeta{
+        font-size: 0.8rem;
+        padding: 1rem;
+    }
+
+    section .contenedor-section{
+        margin-top: 2rem;
+    }
+
+    section .botones{
+        justify-content: start;
+        gap: 0.7rem;
+    }
+
+    section .botones .boton-uno, .botones .boton-dos{
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
